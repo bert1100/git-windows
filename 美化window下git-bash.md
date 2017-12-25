@@ -1,6 +1,3 @@
----
-![20171225100811](imgs/20171225100811.png)typora-copy-images-to: imgs
----
 
 # 美化windows 10下git bash窗口
 
