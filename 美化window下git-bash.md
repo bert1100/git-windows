@@ -24,3 +24,11 @@
 - <https://github.com/oumu/mintty-color-schemes>
 - <https://github.com/mavnn/mintty-colors-solarized>
 - <https://github.com/PhilipDaniels/mintty/tree/master/themes>
+
+
+
+### 写在最后
+
+我推荐使用 typora 作为md文件的编辑器，并把 它的图片设置成 `优先使用相对路径`，这样就可以在github上不必操心图片的显示问题了。
+
+> 希望 typora 增强 bash64的图片选项
