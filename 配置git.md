@@ -1,4 +1,4 @@
-# git的使用
+# 在使用前配置git
 
 ## 配置SSH keys链接github
 
@@ -71,32 +71,32 @@ Hi xxx! You've successfully authenticated, but GitHub does not provide shell acc
 3 创建本地项目（以test为例）
 
   1) 创建目录
-  
+
   ```
   $ mkdir test
   $ cd test
 
   ```
   2) 初始化
-  
+
   ```
   $ git init
   3) 创建hello.md文件
   $ echo "这是一次测试test ssh key" > hello.md
   ```
   3) 提交到本地
-  
+
   ```
   $ git add .   #提交当前目录下所以文件
   $ git commit -m "add hello.md"   #提交记录说明 
   ```
-  
+
   4) 提交到github
   ```
   $ git remote add origin ‘粘贴复制test ssh key的ssh路径’  #
   $ git push -u origin master
   Enter passphrase for key '/c/Users/hgpin_000/.ssh/id_rsa':  #ssh key设置密码故此需要输入密码
-```
+  ```
 
 4 **刷新test ssh key仓库，查看是否生效**
 

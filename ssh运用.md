@@ -15,7 +15,7 @@
 
 ssh实际上是仍是一个软件，它有自己的文件配置。以mac为例：
 
-ssh的系统级配置（也就是全局配置）位于 /etc/ssh/ssh_config 和 /etc/ssh/sshd_config （暂时还不懂sshd）
+ssh的系统级配置（也就是全局配置）位于 /etc/ssh/ssh_config 和 /etc/ssh/sshd_config （sshd_config 远程主机的配置文件，需要确认打得开：RSAAuthentication yes 、PubkeyAuthentication yes 和用于验证公钥key所放的位置 AuthorizedKeysFile .ssh/authorized_keys，最后还要重启远程主机的ssh服务以便生效：/etc/init.d/ssh restart）
 
 ```basic
 #中文详解  文件位置：/etc/ssh/ssh_config 
