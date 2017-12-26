@@ -121,7 +121,7 @@ $ git checkout -- .
 ## 一气呵成：提交所有并推送到远程
 
 ```
-$ git add . && git commmit -m "change all files" && git push origin master
+$ git add . && git commit -m "change all files" && git push origin master
 ```
 
 > && 符号是linux的命令特征，它保证前面的命令必须执行。
