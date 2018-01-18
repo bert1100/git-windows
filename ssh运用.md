@@ -147,10 +147,10 @@ EscapeChar ~“EscapeChar”
 # HostName： 你要登录的主机名
 # User：登录名
 # PubkeyAcceptedKeyTypes 默认是rsa，会报错，我这里使用的+ssh-dss，意思加上ssh-dss密钥方式（即DSA，由于DSA加密方式比较weak，因此在mac上的ssh默认下是不启用的）
-# IdentityFile： 指明上面User对应的IdentityFile路径
+# IdentityFile： 指明上面User对应的IdentityFile路径(特别注意：这里放的是私钥)
 
 # github实例
-Host Build software better,togethor
+Host Build software better,togethor（这里是github的域名或者ip）
    HostName  Build software better,togethor
    PreferredAuthentications publickey
    PubkeyAcceptedKeyTypes +ssh-dss 
@@ -181,7 +181,7 @@ Host Build software better,togethor
 
 **公钥登录**
 
-使用密码登录，每次都必须输入密码，非常麻烦。好在SSH还提供了公钥登录，可以省去输入密码的步骤。
+如果使用密码登录，每次都必须输入密码，非常麻烦。好在SSH还提供了公钥登录，可以省去输入密码的步骤。
 
 所谓"公钥登录"，原理很简单，就是用户将自己的公钥储存在远程主机上。登录的时候，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来。远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录shell，不再要求密码。
 
