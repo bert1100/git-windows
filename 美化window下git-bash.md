@@ -15,8 +15,9 @@
 
 ![20171225100811](imgs/20171225100811.png)
 
-1.  在用户的目录下创建 .mintty文件夹，里面 themes文件夹表示风格
- > 例如：  C:\Users\<username>\.mintty\themes
+1.  在用户的目录下创建 .mintty文件夹，里面 themes文件夹表示风格，FlatUI比较推荐，颜色不会偏暗。
+> 例如：  C:\Users\<username>\.mintty\themes
+
 2.  你可以从下方下载 配色风格，放入 上方的themes文件夹下，然后应用它即可。
 
 - [https://github.com/geoffstokes/base16-mintty ](https://github.com/geoffstokes/base16-mintty)
@@ -25,7 +26,17 @@
 - <https://github.com/mavnn/mintty-colors-solarized>
 - <https://github.com/PhilipDaniels/mintty/tree/master/themes>
 
+3. 支持显示中文界面：在左侧菜单 『window』的设置 中，设置最下面界面语言为： zh_CN
 
+### 字符编码
+
+使用git命令操作时，中文字符往往显示乱码，显得很别扭，只需在『文本』中设置一下即可，方法如下：
+
+在菜单『 Text』 中，将字体设置为自己喜欢的（我用的是Source Code Pro Medium），字体选项中，勾选了字体平滑，这样字体会更圆润，没有毛边的感觉。
+
+最重要的：本地local-中选择 zh_CN , 字符集选择：utf-8 。
+
+这样git命令中中文字符和目录路径中的中文字符，就显示一致了，效果完美。
 
 ### 写在最后
 
