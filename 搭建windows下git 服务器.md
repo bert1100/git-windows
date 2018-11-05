@@ -9,7 +9,7 @@
 
 - Bitvise SSH Server
 
-  > win 10 请使用 BvSshServer-Inst-8.17,  不要安装 8.0之前的版本，会出现连接失败的问题。
+  > 我用的是win 10 去官网下载 BvSshServer-Inst-8.17,  不要安装 8.0之前的版本，会出现连接失败的问题。
 
 - Git for Windows
 
