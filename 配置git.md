@@ -1,5 +1,29 @@
 # 在使用前配置git
 
+> https://www.jianshu.com/p/f29ca723db4f
+
+本文主要讲解 git 在使用时的全局设置以及若干问题的解决办法：
+
+## 查看配置
+
+`git config --list`；查看所有的(name.key)/(value) -l | --list
+
+## 解决中文编码
+
+```
+git config --global core.quotepath false
+```
+
+core.quotepath 设为 false 的话，就不会对 0x80 以上的字符进行quote。引用路径中的中文显示正常。
+
+## git 显示彩色
+
+```bash
+git config --global color.ui true
+```
+
+通过以上命令，在全局上设置成彩色，增强可读性。
+
 ## 配置SSH keys链接github
 
 1 **检查本机是否有ssh key设置**
@@ -14,7 +38,7 @@
 
 `$ cd ~`  #保证当前路径在`~`下
 
-`$ ssh-keygen -t rsa -C "xxxxxx@yy.com" ` #建议填写自己真实有效的邮箱地址
+`$ ssh-keygen -t rsa -C "xxxxxx@yy.com" ` # -C参数表示添加备注，建议填写自己真实有效的邮箱地址
 
 ```
 Generating public/private rsa key pair.

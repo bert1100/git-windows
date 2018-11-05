@@ -15,7 +15,7 @@
 
 ssh实际上是仍是一个软件，它有自己的文件配置。以mac为例：
 
-ssh的系统级配置（也就是全局配置）位于 /etc/ssh/ssh_config 和 /etc/ssh/sshd_config （sshd_config 远程主机的配置文件，需要确认打得开：RSAAuthentication yes 、PubkeyAuthentication yes 和用于验证公钥key所放的位置 AuthorizedKeysFile .ssh/authorized_keys，最后还要重启远程主机的ssh服务以便生效：/etc/init.d/ssh restart）
+ssh的系统级配置（也就是全局配置）位于 /etc/ssh/ssh_config 和 /etc/ssh/sshd_config （sshd_config 远程主机的配置文件，需要确认打开：RSAAuthentication yes 、PubkeyAuthentication yes 和用于验证公钥key所放的位置 AuthorizedKeysFile .ssh/authorized_keys，最后还要重启远程主机的ssh服务以便生效：/etc/init.d/ssh restart）
 
 ```basic
 #中文详解  文件位置：/etc/ssh/ssh_config 
@@ -89,7 +89,7 @@ EscapeChar ~“EscapeChar”
 ### step2. 添加私钥
 `$ ssh-add ~/.ssh/id_rsa` 
 
-> 如果生成密钥时是使用的默认的，那么就是这个了，如果不是的话就写你的私钥地址吧。
+> 如果生成密钥时是使用的默认的id_rsa文件，那么就是这个了，如果不是的话就写你的私钥地址吧。
 > 如果报错：
 >
 >   ~ ssh-add ~/Documents/CRTkey/Identity              
@@ -220,7 +220,7 @@ Host Build software better,togethor（这里是github的域名或者ip）
 
 > 　　$ ssh user@host 'mkdir -p .ssh && cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 
-这条命令由多个语句组成，依次分解开来看：（1）"$ ssh user@host"，表示登录远程主机；（2）单引号中的mkdir .ssh && cat >> .ssh/authorized_keys，表示登录后在远程shell上执行的命令：（3）"$ mkdir -p .ssh"的作用是，如果用户主目录中的.ssh目录不存在，就创建一个；（4）'cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub的作用是，将本地的公钥文件~/.ssh/id_rsa.pub，重定向追加到远程文件authorized_keys的末尾。
+这条命令由多个语句组成，依次分解开来看：（1）"\$ ssh user@host"，表示登录远程主机；（2）单引号中的mkdir .ssh && cat >> .ssh/authorized_keys，表示登录后在远程shell上执行的命令：（3）"$ mkdir -p .ssh"的作用是，如果用户主目录中的.ssh目录不存在，就创建一个；（4）'cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub的作用是，将本地的公钥文件~/.ssh/id_rsa.pub，重 定向追加到远程文件authorized_keys的末尾。
 
 写入authorized_keys文件后，公钥登录的设置就完成了。
 
