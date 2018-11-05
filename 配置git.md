@@ -24,6 +24,8 @@ git config --global color.ui true
 
 通过以上命令，在全局上设置成彩色，增强可读性。
 
+
+
 ## 配置SSH keys链接github
 
 1 **检查本机是否有ssh key设置**
@@ -126,6 +128,8 @@ Hi xxx! You've successfully authenticated, but GitHub does not provide shell acc
 
 （完）
 
+
+
 ### git设置源仓库用法
 
 git remote set-url origin URL
@@ -146,6 +150,7 @@ git remote add origin git@github.com:Liutos/foobar.git
 `windows`中的换行符为 `CRLF`， 而在linux下的换行符为`LF`，所以在执行`add .` 时出现提示.
 
 **解决办法：**
+
 ```
 $ rm -rf .git  // 删除.git 
 $ git config --global core.autocrlf false  //禁用自动转换
@@ -160,6 +165,27 @@ $ git add .
 
 `CRLF` -- `Carriage-Return Line-Feed` 回车换行也就是回车(`CR`, `ASCII 13`, `\r`) 换行(`LF`, `ASCII 10`, `\n`)。这两个`ACSII`字符不会在屏幕有任何输出，但在`Windows`中广泛使用来标识一行的结束。而在`Linux/UNIX`系统中只有换行符。也就是说在`windows`中的换行符为 `CRLF`， 而在linux下的换行符为：`LF`
 使用git来生成一个项目工程后，文件中的换行符为`LF`， 当执行`git add .`时，系统提示：`LF` 将被转换成 `CRLF`
+
+### Github上传ssh-key后仍须输入密码？
+
+这是由于git clone项目时，使用了https的方式进行克隆，所以在git push到github上时，就会被要求输入用户名和密码。
+
+解决办法
+
+```bash
+# 使用ssh方式克隆仓库
+git clone git@github.com:Name/project.git
+```
+
+已经存在的仓库：
+
+```
+# 只需修改 .git/config 中的 url 即可
+url=git@github.com:Name/project.git
+#或者使用命令行
+# git remote set-url origin git@github.com:Name/project.git
+```
+
 
 
 ### 如何修改git项目中 remote.origin.url？
