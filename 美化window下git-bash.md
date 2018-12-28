@@ -58,6 +58,14 @@ modify "data/python\345\255\246\344\271\240\350\265\204\346\226\231.wiki"
 git config --global core.quotepath false
 ```
 
+### git-bash的terminal中输出不是彩色的
+
+当你在window10运行`npm start --colors` 发现输出的字符颜色是非彩色的，这说明安装的时候选择了 mintty，因为它的彩色支持与windows不兼容，因此，重新安装git，记得选择**Use Windows default console window！**
+
+> 原因解释：https://stackoverflow.com/questions/48749738/how-do-i-get-colorized-output-on-my-windows-git-bash-terminal
+
+![](imgs/Snipaste_2018-12-28_11-02-10.png)
+
 
 
 ### 在命令行中打开当前资源管理器
