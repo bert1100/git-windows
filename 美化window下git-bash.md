@@ -66,6 +66,8 @@ git config --global core.quotepath false
 
 ![](imgs/Snipaste_2018-12-28_11-02-10.png)
 
+> 注：其实上述情况很复杂，还可能是webpack中所用的support-colors 组件有关，根据support-colors的文档说明，当你在环境变量上设置：FORCE_COLOR=2 时，node命令 无论加不加 --color参数，node就会强制使用彩色命令在控制台terminal输出。
+
 
 
 ### 在命令行中打开当前资源管理器
