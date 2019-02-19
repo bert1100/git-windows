@@ -169,6 +169,14 @@ Host Build software better,togethor（这里是github的域名或者ip）
 
 ------
 
+## ssh问题汇总
+
+- 清除原有ssh密钥方法
+
+  当远程git-server的用户账号或者密钥发生了更改，需要清理下 `known_hosts`
+
+  > ssh-keygen -R 192.168.1.203(你远程服务器的IP)
+
 
 
 #### ssh登录提示
