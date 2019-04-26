@@ -22,7 +22,7 @@ $ git status
 
 
 
-## 加入到本地版本库（提交到暂存区）
+## 提交到暂存区stage/index
 
 ```
 $ git add .
@@ -42,15 +42,74 @@ $ git add src/
 
 > 上述命令则是提交一个目录src/
 
+```
+$ git reset HEAD readme.md
+```
 
+> 上述命令是撤销暂存区的改变，即恢复暂存区到最近的上一次历史。
 
-## 提交到本地版本库
+```
+$ git checkout -- readme.md
+```
+
+> 最后，上述命令是清理`工作区` 到上个版本最新状态。
+> `git checkout -- file`命令中的`--`很重要，没有`--`，就变成了“切换到另一个分支”的命令。
+
+## 提交到本地版本库HEAD
 
 ```
 $ git commit -m "相关说明"
 ```
 
 > 提交到本地版本库，使git可以跟踪到版本
+
+
+
+## 如何撤销修改
+
+场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令`git checkout -- file`。
+
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令`git reset HEAD <file>`，就回到了场景1，第二步按场景1操作。
+
+场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考[版本回退](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013744142037508cf42e51debf49668810645e02887691000)一节，不过前提是没有推送到远程库。
+
+
+
+## 版本回退
+
+```
+$ git log
+```
+
+> 先查看提交日志
+
+```
+$ git reset --hard HEAD^
+```
+
+> 回退到上一版本，上上一个版本就是`HEAD^^`，当然往上100个版本写100个`^`比较容易数不过来，所以写成`HEAD~100`。
+
+```
+$ git reset --hard 1094a
+```
+
+> 还可以找到以前的版本，再穿梭回来。版本号没必要写全，前几位就可以了，Git会自动去找。
+
+```
+$ git checkout --
+```
+
+> 然后更新工作区的文件
+
+```
+$ git reflog
+e475afc HEAD@{1}: reset: moving to HEAD^
+1094adb (HEAD -> master) HEAD@{2}: commit: append GPL
+e475afc HEAD@{3}: commit: add distributed
+eaadf4e HEAD@{4}: commit (initial): wrote a readme file
+```
+
+> 后悔药：查看以前的commit id，方便回退。
 
 
 
