@@ -91,3 +91,7 @@ open .
 我推荐使用 typora 作为md文件的编辑器，并把 它的图片设置成 `优先使用相对路径`，这样就可以在github上不必操心图片的显示问题了。
 
 > 希望 typora 增强 bash64的图片选项
+
+
+
+如果你在 Windows 上通过 minTTY 使用 Git Bash，一些工具的交互提示符并不工作（例如新版的@vue/cli）。你必须通过 `winpty vue.cmd create hello-world` 启动这个命令。不过，如果你仍想使用 `vue create hello-world`，则可以通过在 `~/.bashrc` 文件中添加以下行来为命令添加别名。 `alias vue='winpty vue.cmd'` 你需要重新启动 Git Bash 终端会话以使更新后的 bashrc 文件生效。
