@@ -204,7 +204,42 @@ git config remote.origin.url url://new/url.git
 git remote set-url origin url://new/url.git
 ```
 
+### 先建项目后添加远程git仓库步骤
 
+step1. 创建文件夹，然后在里面放一些文件
+```
+mkdir ldapclient
+... //创建一些其他文件
+```
+
+step2. 加入git 追踪
+```
+git init
+... //然后可以在本地做一些版本提交等操作
+```
+step3. 添加 git 远程仓库源
+```
+git remote add origin git@github.com:bert1100/ldapclient.git
+git remote -v    //查看源
+```
+
+step4. 拉取 git 远程仓库源origin合并到本地源master
+```
+git pull //错误！此时会报错，因为git不知道你要合并哪个分支
+git pull origin master //正确！需要指明，git才能关联起来，git是不是傻？
+```
+
+step5. 提交到 git 远程仓库源
+```
+git push //错误！此时仍然会报错，因为git不知道你要合并哪个分支
+git push origin master //正确！
+```
+> git push 的提示：
+fatal: 当前分支 master 没有对应的上游分支。
+为推送当前分支并建立与远程上游的跟踪，使用
+
+    `git push --set-upstream origin master`
+    
 ## git 参考文档如下：
 
 - [Git使用笔记 - 飞鸿影](http://www.tuicool.com/articles/mEvaq2)
